@@ -241,15 +241,22 @@ const photos = [
     }
   ];
 
-  const getAllPhotos = () => {
-    return photos;
-  }
+  function getAllPhotos(photos) {
+    return photos.map(photo => {
+        return {
+            id: photo.id,
+            title: photo.title,
+            url: photo.url
+        };
+    });
+}
 
   const getPhotoById = (id) => {
     return photos.find(photo => photo.id === id);
   }
 
   export {
+    photos,
     getAllPhotos,
     getPhotoById
   }
